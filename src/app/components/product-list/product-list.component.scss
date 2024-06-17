@@ -1,0 +1,14 @@
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    .product-item {
+        width: calc(20% - 30px);
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}
+.add-button {
+    background-color: rgb(232, 132, 101);
+}
+

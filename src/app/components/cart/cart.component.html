@@ -1,0 +1,17 @@
+<!-- components/cart/cart.component.html -->
+<div class="cart">
+    <mat-list>
+      <mat-list-item *ngFor="let item of cartItems$ | async">
+        <img matListAvatar [src]="item.product.image" alt="{{item.product.name}}">
+        <h3 matLine>{{item.product.name}}</h3>
+        <p matLine>Quantity: {{item.quantity}}</p>
+        <button mat-button color="warn" (click)="removeFromCart(item)"><mat-icon>delete</mat-icon></button>
+      </mat-list-item>
+    </mat-list>
+    <div class="cart-summary">
+      <p>Total: {{total$ | async | currency}}</p>
+      <button mat-raised-button color="primary" (click)="checkout()">Checkout</button>
+      <button mat-raised-button color="warn" (click)="clearCart()">Clear Cart</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" class="toolbar">
+  <img src="assets/logo-white-small.svg" class="logo" alt="">
+  <span class="spacer"></span>
+  <mat-form-field>
+    <input matInput placeholder="Search" (input)="searchItem($event)">
+  </mat-form-field>
+  <button mat-icon-button (click)="toggleCart()">
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-card *ngIf="isCartVisible" class="cart-card">
+  <app-cart></app-cart>
+</mat-card>
+
+<app-product-list [searchQuery]="searchQuery"></app-product-list>

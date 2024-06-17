@@ -1,0 +1,18 @@
+.toolbar {
+    background-color: rgb(232, 132, 101);
+}
+.spacer {
+    flex: 1 1 auto;
+  }
+  
+  .cart-card {
+    position: absolute;
+    top: 64px; /* Adjust based on your toolbar height */
+    right: 16px; /* Adjust based on your layout */
+    width: 300px; /* Adjust based on your preference */
+    z-index: 1000;
+  }
+  .logo {
+    width: 100px;
+  }
+  
