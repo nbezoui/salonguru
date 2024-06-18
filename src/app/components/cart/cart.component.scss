@@ -1,6 +1,9 @@
 .cart-summary {
     display: flex;
     justify-content: space-between;
+    .checkout-btn {
+        background-color: #6dbab5cc;
+    }
 }
 .empty {
     display: flex;
@@ -8,4 +11,8 @@
     font-size: 16px;
     font-weight: 700;
     padding: 20px;
+}
+
+.total {
+    font-weight: 700;
 }

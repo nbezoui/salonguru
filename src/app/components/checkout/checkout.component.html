@@ -1,12 +1,20 @@
-<div>
-  <h2>Checkout</h2>
-  <ng-container *ngIf="!(checkoutError$  | async) ; else ErrorTmp ">
-    <p>Thank you for your purchase, Total Amount: {{ totalAmount$ | async  }}</p>
-    <div *ngFor="let item of items$ |async">{{item.name}} x {{item.quantity}} : {{item.total_price}}</div> 
-  </ng-container>
-  <button mat-raised-button color="primary" (click)="back()">Back</button>
-  <ng-template #ErrorTmp>
-    <p class="error">{{ checkoutError$  | async }}</p>
-  </ng-template>
-  
+<div class="container">
+  <mat-toolbar class="title" color="primary">Checkout</mat-toolbar>
+  <mat-card class="card">
+    <ng-container *ngIf="!(checkoutError$  | async) ; else ErrorTmp">
+      <p class="message">Thank you for your purchase, Total Amount: {{ totalAmount$ | async  }}</p>
+      <div class="items-wrapper">
+        <div *ngFor="let item of items$ |async">{{item.name}} x {{item.quantity}} : {{item.total_price}}</div>
+      </div>
+       
+    </ng-container>
+    <div class="button-wrapper">
+      <button mat-raised-button color="primary" (click)="back()" class="button">Back</button>
+    </div>
+   
+    <ng-template #ErrorTmp>
+      <p class="message error">{{ checkoutError$  | async }}</p>
+    </ng-template>
+  </mat-card>
+ 
 </div>

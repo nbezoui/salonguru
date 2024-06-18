@@ -10,9 +10,9 @@
     </mat-list>
     <ng-container *ngIf="(cartItems$ | async) as items">
       <ng-container *ngIf="items.length > 0 else emptyCart">
-        <p>Total: {{total$ | async | currency}}</p>
+        <p class="total">Total: {{total$ | async | currency}}</p>
         <div class="cart-summary">
-        <button mat-raised-button color="primary" (click)="checkout()">Checkout</button>
+        <button mat-raised-button class="checkout-btn" (click)="checkout()">Checkout</button>
         <button mat-raised-button color="warn" (click)="clearCart()">Clear Cart</button>
       </div>
       </ng-container>
