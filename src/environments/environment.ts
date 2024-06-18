@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://g93902zutc.execute-api.eu-central-1.amazonaws.com/prod/products',
+  apiUrl: 'https://g93902zutc.execute-api.eu-central-1.amazonaws.com/prod/',
   apiKey: '2XyCVKIz277ZMEirPNTyQ3814iBXY5rg9ddTfX4W'
 };
 

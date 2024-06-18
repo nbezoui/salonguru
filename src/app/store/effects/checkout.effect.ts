@@ -12,7 +12,7 @@ import { CheckoutPayload } from '../reducers/checkout.reducer';
 @Injectable()
 export class CheckoutEffects {
 
-  private apiUrl = environment.apiUrl;
+  private apiUrl = environment.apiUrl +"checkout";
   private headers = new HttpHeaders({
     'Content-Type': 'application/json',
     'x-api-key': environment.apiKey

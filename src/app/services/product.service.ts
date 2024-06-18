@@ -2,7 +2,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Product } from '../models/cart-item';
 import { environment } from 'src/environments/environment';
 
 
@@ -10,7 +9,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = environment.apiUrl;
+  private apiUrl = environment.apiUrl + "products";
 
   constructor(private http: HttpClient) {}
 
