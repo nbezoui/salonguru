@@ -53,7 +53,7 @@ import { checkoutReducer } from './store/reducers/checkout.reducer';
     HttpClientModule,
     StoreModule.forRoot({ products: productReducer, cart: cartReducer, checkout: checkoutReducer }),
     EffectsModule.forRoot([ProductEffects, CartEffects, CheckoutEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: true }),
+    StoreDevtoolsModule.instrument(),
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,

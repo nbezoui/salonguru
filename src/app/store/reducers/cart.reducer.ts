@@ -28,6 +28,6 @@ export const cartReducer = createReducer(
   })),
   on(CheckoutActions.checkoutSuccess, state => ({
     ...state,
-    items: [] // Clear items after successful checkout
+    items: []
   }))
 );

@@ -8,11 +8,12 @@
   
   .cart-card {
     position: absolute;
-    top: 64px; /* Adjust based on your toolbar height */
-    right: 16px; /* Adjust based on your layout */
-    width: 300px; /* Adjust based on your preference */
+    top: 64px;
+    right: 16px;
+    width: 400px;
     z-index: 1000;
   }
+
   .logo {
     width: 100px;
   }
