@@ -1,9 +1,12 @@
 <div>
   <h2>Checkout</h2>
-  <ng-container *ngIf="!(checkoutError$  | async)">
+  <ng-container *ngIf="!(checkoutError$  | async) ; else ErrorTmp ">
     <p>Thank you for your purchase, Total Amount: {{ totalAmount$ | async  }}</p>
-    <button mat-raised-button color="primary" (click)="back()">Back</button>
+    <div *ngFor="let item of items$ |async">{{item.name}} x {{item.quantity}} : {{item.total_price}}</div> 
   </ng-container>
-
-  <p *ngIf="checkoutError$  | async" class="error">{{ checkoutError$  | async }}</p>
+  <button mat-raised-button color="primary" (click)="back()">Back</button>
+  <ng-template #ErrorTmp>
+    <p class="error">{{ checkoutError$  | async }}</p>
+  </ng-template>
+  
 </div>

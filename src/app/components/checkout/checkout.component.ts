@@ -24,6 +24,5 @@ export class CheckoutComponent {
 
   back(){
     this.router.navigate([""]);
-
   }
 }

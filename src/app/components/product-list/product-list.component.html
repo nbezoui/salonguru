@@ -1,15 +1,19 @@
 <div class="product-list">
-    <mat-card *ngFor="let product of products$ | async" class="product-item">
-      <img mat-card-image [src]="product.image" alt="{{product.name}}">
-      <mat-card-title>{{product.name}}</mat-card-title>
-      <mat-card-content>
-        <p>{{product.description}}</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="primary"  class="add-button"(click)="addToCart(product)" [disabled]="product.quantity === 0">
-          Add to Cart
-        </button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-  
+  <mat-card *ngFor="let product of products$ | async" class="product-item">
+    <img mat-card-image [src]="product.image" alt="{{product.name}}" class="product-image">
+    <mat-card-title class="title">{{product.name}}</mat-card-title>
+    <mat-card-content class="product-content">
+      <p>{{product.description}}</p>
+    </mat-card-content>
+    <mat-card-actions class="product-actions">
+      <button 
+       mat-raised-button
+       color="primary"  
+       class="add-button"
+       (click)="addToCart(product)" 
+       [disabled]="!product.quantity">
+        Add to Cart
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

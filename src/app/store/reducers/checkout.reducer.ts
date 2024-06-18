@@ -2,9 +2,12 @@ import { createReducer, on } from '@ngrx/store';
 import { CartItem } from 'src/app/models/cart-item';
 import * as CheckoutActions from 'src/app/store/actions/checkout.actions';
 
+export type CheckoutItem = CartItem & {total_price:number};
+export type CheckoutPayload = { product_id: number, quantity: number}
+
 export interface CheckoutState {
   totalAmount: number;
-  items: (CartItem & {total_price:number})[];
+  items: CheckoutItem[];
   checkoutError: any;
 }
 
@@ -16,8 +19,9 @@ export const initialCheckoutState: CheckoutState = {
 
 export const checkoutReducer = createReducer(
   initialCheckoutState,
-  on(CheckoutActions.checkoutSuccess, (state, { totalAmount }) => ({
+  on(CheckoutActions.checkoutSuccess, (state, { totalAmount, items }) => ({
     ...state,
+    items,
     totalAmount,
     checkoutError: null
   })),

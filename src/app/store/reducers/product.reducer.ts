@@ -11,22 +11,7 @@ export interface ProductState {
 }
 
 export const initialState: ProductState = {
-  products: [
-    {"name": "Sleek Frozen Chair",
-    "quantity": 5,
-    "description": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounte at the rear of the engine and four wheel drive",
-    "image": "http://placeimg.com/640/480",
-    "id": "1",
-    price: 1
-    },
-    {
-    "name": "Practical Frozen Chips",
-    "quantity": 3,
-    "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
-    "image": "http://placeimg.com/640/480",
-    "id": "2",
-    price: 10
-  }],
+  products: [],
   error: null
 };
 

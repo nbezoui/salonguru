@@ -8,10 +8,15 @@
         <button mat-button color="warn" (click)="removeFromCart(item)"><mat-icon>delete</mat-icon></button>
       </mat-list-item>
     </mat-list>
-    <div class="cart-summary">
-      <p>Total: {{total$ | async | currency}}</p>
-      <button mat-raised-button color="primary" (click)="checkout()">Checkout</button>
-      <button mat-raised-button color="warn" (click)="clearCart()">Clear Cart</button>
-    </div>
+    <ng-container *ngIf="(cartItems$ | async) as items">
+      <ng-container *ngIf="items.length > 0 else emptyCart">
+        <p>Total: {{total$ | async | currency}}</p>
+        <div class="cart-summary">
+        <button mat-raised-button color="primary" (click)="checkout()">Checkout</button>
+        <button mat-raised-button color="warn" (click)="clearCart()">Clear Cart</button>
+      </div>
+      </ng-container>
+      <ng-template #emptyCart><span class="empty">Your cart is still empty</span> </ng-template>
+    </ng-container>  
   </div>
   
